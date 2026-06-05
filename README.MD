@@ -19,20 +19,20 @@
 ### Clone this repo (Linux)
 1. `cd /opt`
 2. `git clone https://github.com/dephyre/qbittorent-catppuccin`
-3. `sudo chmod -R 777 catppuccin`
+3. `sudo chmod -R 777 qbittorent-catppuccin`
 
 ### Activate Alternative WebUI in qBittorrent
 1. Under `Tools->Preferences->WebUI` enable `Use alternative WebUI`.
-2. Choose a location that points to the `catppuccin` folder.
+2. Choose a location that points to the `qbittorent-catppuccin` folder.
 3. Restart qBittorrent or refresh your browser for changes to take effect.
 
 You can also change these settings via the config file. The relevant entries are:
 
 - WebUI\AlternativeUIEnabled=true
-- WebUI\RootFolder=/path/to/catppuccin
+- WebUI\RootFolder=/path/to/qbittorent-catppuccin
 
 ### Update theme (Linux)
-1. `cd /opt/catppuccin`
+1. `cd /opt/qbittorent-catppuccin`
 2. `git checkout main`
 3. `git fetch origin main`
 4. `git reset --hard origin/main`
