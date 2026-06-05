@@ -1,7 +1,8 @@
 # Catppuccin Theme for qBittorrent WebUI
 **_A beautiful light/dark theme for qBittorrent WebUI based on Catppuccin color palette_**
 
-![preview][preview]
+![preview](preview-dark.png)[preview]
+![preview](preview-light.png)[preview]
 
 # Features
 - Automatic light/dark mode switching based on system preference
@@ -17,21 +18,21 @@
 
 ### Clone this repo (Linux)
 1. `cd /opt`
-2. `sudo git clone https://github.com/dephyre/qbittorent-catppuccin.git`
-3. `sudo chmod -R 777 catppuccin`
+2. `git clone https://github.com/dephyre/qbittorent-catppuccin`
+3. `sudo chmod -R 777 qbittorent-catppuccin`
 
 ### Activate Alternative WebUI in qBittorrent
 1. Under `Tools->Preferences->WebUI` enable `Use alternative WebUI`.
-2. Choose a location that points to the `catppuccin` folder.
+2. Choose a location that points to the `qbittorent-catppuccin` folder.
 3. Restart qBittorrent or refresh your browser for changes to take effect.
 
 You can also change these settings via the config file. The relevant entries are:
 
 - WebUI\AlternativeUIEnabled=true
-- WebUI\RootFolder=/path/to/catppuccin
+- WebUI\RootFolder=/path/to/qbittorent-catppuccin
 
 ### Update theme (Linux)
-1. `cd /opt/catppuccin`
+1. `cd /opt/qbittorent-catppuccin`
 2. `git checkout main`
 3. `git fetch origin main`
 4. `git reset --hard origin/main`
@@ -42,6 +43,7 @@ You can also change these settings via the config file. The relevant entries are
 * Modified by dephyre
 * Fontawesome for their great fonts
 * qBittorrent for the base files
+* Cloned from https://github.com/repslet/nightwalker.git
 
 [preview]: preview.png
 [qbittorrentsource]: https://github.com/qbittorrent/qBittorrent/tree/master/src/webui/www1\
