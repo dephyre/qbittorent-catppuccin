@@ -1,34 +1,104 @@
 @import url(https://use.fontawesome.com/releases/v5.0.7/css/all.css);
 
+/* ═══════════════════════════════════════════════════════════════
+   Catppuccin Theme - Auto Light/Dark Mode
+   Light: Latte | Dark: Macchiato Lavender
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Light Mode - Catppuccin Latte (default when system prefers light) */
 :root {
-    --color-Dark: #25282e;
-    --color-LessDark: #2a2f36;
-    --color-Grey: #34373f;
-    --color-GreySelected: #454952;
-    --color-LightGrey: #51555f;
-    --color-White: #dfdfdf;
-    --color-ProgressBarFG: #ffffff;
-    --color-ProgressBarBG: #2e78d8;
-    --color-DarkSelected: #2e78d8;
+    /* Background/Surface colors */
+    --color-Dark: #eff1f5; /* Base */
+    --color-LessDark: #e6e9ef; /* Mantle */
+    --color-Grey: #ccd0da; /* Surface 0 */
+    --color-GreySelected: #bcc0cc; /* Surface 1 */
+    --color-LightGrey: #acb0bb; /* Surface 2 */
+    --color-White: #4c4f69; /* Text */
 
-    --color-RatioBad: #eb2a2a;
-    --color-RatioAlmost: #e78310;
-    --color-RatioGood: #36bd58;
-    --color-RatioBest: #2e78d8;
+    /* Progress bar */
+    --color-ProgressBarFG: #eff1f5;
+    --color-ProgressBarBG: #7287fd; /* Lavender */
+    --color-DarkSelected: #7287fd;
 
-    --color-BadRed: #bd3636;
-    --color-GoodGreen: #36bd58;
-    --color-Orange: #c77920;
-    --color-Blue: #2e78d8;
+    /* Status colors */
+    --color-RatioBad: #d20f39; /* Red */
+    --color-RatioAlmost: #fe640b; /* Peach */
+    --color-RatioGood: #40a02b; /* Green */
+    --color-RatioBest: #7287fd; /* Lavender */
 
-    --button-color: #34373f;
-    --button-color-hover: #2e78d8;
-    --button-text: #eee;
-    --accent-color: #2e78d8;
-    --accent-color-hover: #2e78d8;
-    --text: #eee;
-    --text-hover: #fff;
-    --link-color: #2e78d8;
+    /* Semantic colors */
+    --color-BadRed: #d20f39; /* Red */
+    --color-GoodGreen: #40a02b; /* Green */
+    --color-Orange: #fe640b; /* Peach */
+    --color-Blue: #1e66f5; /* Blue */
+
+    /* UI colors */
+    --button-color: #ccd0da;
+    --button-color-hover: #7287fd;
+    --button-text: #4c4f69;
+    --accent-color: #7287fd; /* Lavender */
+    --accent-color-hover: #7287fd;
+    --text: #4c4f69;
+    --text-hover: #5c5f72;
+    --link-color: #7287fd;
+
+    /* Light mode specific */
+    --color-input-bg: rgba(0, 0, 0, 0.08);
+    --color-input-bg-focus: rgba(0, 0, 0, 0.12);
+    --color-overlay: rgba(0, 0, 0, 0.08);
+    --color-overlay-strong: rgba(0, 0, 0, 0.25);
+    --color-text-on-accent: #eff1f5;
+    --color-text-muted: rgba(76, 79, 105, 0.7);
+    --color-border: rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Mode - Catppuccin Macchiato Lavender */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Background/Surface colors */
+        --color-Dark: #24273a; /* Base */
+        --color-LessDark: #1e2030; /* Mantle */
+        --color-Grey: #363a4f; /* Surface 0 */
+        --color-GreySelected: #494d64; /* Surface 1 */
+        --color-LightGrey: #5b6078; /* Surface 2 */
+        --color-White: #cad3f5; /* Text */
+
+        /* Progress bar */
+        --color-ProgressBarFG: #24273a;
+        --color-ProgressBarBG: #b7bdf8; /* Lavender */
+        --color-DarkSelected: #b7bdf8;
+
+        /* Status colors */
+        --color-RatioBad: #ed8796; /* Red */
+        --color-RatioAlmost: #f5a97f; /* Peach */
+        --color-RatioGood: #a6e3a1; /* Green */
+        --color-RatioBest: #b7bdf8; /* Lavender */
+
+        /* Semantic colors */
+        --color-BadRed: #ed8796; /* Red */
+        --color-GoodGreen: #a6e3a1; /* Green */
+        --color-Orange: #f5a97f; /* Peach */
+        --color-Blue: #8aadf4; /* Blue */
+
+        /* UI colors */
+        --button-color: #363a4f;
+        --button-color-hover: #b7bdf8;
+        --button-text: #cad3f5;
+        --accent-color: #b7bdf8; /* Lavender */
+        --accent-color-hover: #b7bdf8;
+        --text: #cad3f5;
+        --text-hover: #b8c0e0;
+        --link-color: #b7bdf8;
+
+        /* Dark mode specific */
+        --color-input-bg: rgba(255, 255, 255, 0.08);
+        --color-input-bg-focus: rgba(255, 255, 255, 0.12);
+        --color-overlay: rgba(255, 255, 255, 0.08);
+        --color-overlay-strong: rgba(255, 255, 255, 0.25);
+        --color-text-on-accent: #24273a;
+        --color-text-muted: rgba(202, 211, 245, 0.7);
+        --color-border: rgba(255, 255, 255, 0.15);
+    }
 }
 
 /* THEME */
@@ -113,6 +183,21 @@ ul.filterList li:hover,
     background: var(--color-GreySelected) !important;
 }
 
+/* Override style.css specific selectors */
+#torrentFilesTableDiv .dynamicTable tr.nonAlt {
+    background-color: var(--color-Dark) !important;
+}
+
+#torrentFilesTableDiv .dynamicTable tr.nonAlt.selected {
+    background-color: var(--color-GreySelected) !important;
+    color: var(--color-White) !important;
+}
+
+#torrentFilesTableDiv .dynamicTable tr.nonAlt:hover {
+    background-color: var(--accent-color) !important;
+    color: var(--color-text-on-accent) !important;
+}
+
 .toolbarTabs {
     padding-bottom: 0 !important;
 }
@@ -130,7 +215,7 @@ ul.filterList li:hover,
     background: var(--color-Grey) !important;
     border-radius: 2px 2px 0 0;
     box-shadow: none;
-    background-position: left -70px
+    background-position: left -70px;
 }
 
 .toolbarTabs li.selected {
@@ -163,13 +248,10 @@ ul.filterList li:hover,
     color: var(--color-White) !important;
 }
 
-
-
 .icon16 {
     margin: 0;
     cursor: pointer;
 }
-
 
 .panel {
     background: var(--color-Dark) !important;
@@ -265,7 +347,7 @@ ul.filterList li:hover,
 .contextMenu,
 .contextMenu li ul {
     background: var(--color-Grey) !important;
-    border-color: #5e5e5e !important;
+    border-color: var(--color-LightGrey) !important;
 }
 
 .contextMenu li a {
@@ -354,7 +436,6 @@ input::placeholder {
     height: 20px;
 }
 
-
 #error_div {
     color: red;
 }
@@ -380,7 +461,7 @@ input::placeholder {
 /* CREDITS
 ----------------------------------------------------------------------------------------------*/
 div#aboutpage_content.mochaContent h3:nth-child(2)::after {
-    content: '\Awith the Nightwalker-theme. By the Walkerserver community';
+    content: "\Awith the Catppuccin theme by dephyre";
     white-space: pre;
     font-weight: normal;
     color: rgb(255, 255, 255);
@@ -404,7 +485,6 @@ div#aboutpage_content.mochaContent h3:nth-child(2)::after {
     color: var(--color-RatioBest);
 }
 
-
 /* REMOVE UGLY DIVIDER GIF
 ----------------------------------------------------------------------------------------------*/
 td.statusBarSeparator {
@@ -414,7 +494,6 @@ td.statusBarSeparator {
 #mochaToolbar .divider {
     background-image: none;
 }
-
 
 /* TOP MENU ITEMS
 ----------------------------------------------------------------------------------------------*/
@@ -430,7 +509,6 @@ td.statusBarSeparator {
     margin-left: 0px;
 }
 
-
 /* ICONS IN LEFT SIDEBAR/FILTERLIST
 ----------------------------------------------------------------------------------------------*/
 
@@ -438,7 +516,7 @@ ul.filterList a {
     display: inline;
 }
 
-#all_filter>a img {
+#all_filter > a img {
     display: none;
 }
 
@@ -453,7 +531,7 @@ ul.filterList a {
     padding-left: 5px;
 }
 
-#downloading_filter>a img {
+#downloading_filter > a img {
     display: none;
 }
 
@@ -468,7 +546,7 @@ ul.filterList a {
     padding-left: 5px;
 }
 
-#seeding_filter>a img {
+#seeding_filter > a img {
     display: none;
 }
 
@@ -483,7 +561,7 @@ ul.filterList a {
     padding-left: 5px;
 }
 
-#completed_filter>a img {
+#completed_filter > a img {
     display: none;
 }
 
@@ -498,7 +576,7 @@ ul.filterList a {
     padding-left: 5px;
 }
 
-#resumed_filter>a img {
+#resumed_filter > a img {
     display: none;
 }
 
@@ -513,7 +591,7 @@ ul.filterList a {
     padding-left: 5px;
 }
 
-#paused_filter>a img {
+#paused_filter > a img {
     display: none;
 }
 
@@ -528,7 +606,7 @@ ul.filterList a {
     padding-left: 5px;
 }
 
-#errored_filter>a img {
+#errored_filter > a img {
     display: none;
 }
 
@@ -543,7 +621,7 @@ ul.filterList a {
     padding-left: 5px;
 }
 
-#active_filter>a img {
+#active_filter > a img {
     display: none;
 }
 
@@ -558,7 +636,7 @@ ul.filterList a {
     padding-left: 5px;
 }
 
-#inactive_filter>a img {
+#inactive_filter > a img {
     display: none;
 }
 
@@ -573,7 +651,7 @@ ul.filterList a {
     padding-left: 5px;
 }
 
-#stalled_filter>a img {
+#stalled_filter > a img {
     display: none;
 }
 
@@ -588,7 +666,7 @@ ul.filterList a {
     padding-left: 5px;
 }
 
-#stalled_uploading_filter>a img {
+#stalled_uploading_filter > a img {
     display: none;
 }
 
@@ -603,7 +681,7 @@ ul.filterList a {
     padding-left: 5px;
 }
 
-#stalled_downloading_filter>a img {
+#stalled_downloading_filter > a img {
     display: none;
 }
 
@@ -622,7 +700,7 @@ ul.filterList a {
 ----------------------------------------------------------------------------------------------*/
 
 img[src="icons/inode-directory.svg"] {
-    background: url('../icons/inode-directory.png');
+    background: url("../icons/inode-directory.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-origin: content-box;
@@ -630,7 +708,7 @@ img[src="icons/inode-directory.svg"] {
 }
 
 img[src="icons/inode-tag.svg"] {
-    background: url('../icons/inode-tag.png');
+    background: url("../icons/inode-tag.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-origin: content-box;
@@ -638,7 +716,7 @@ img[src="icons/inode-tag.svg"] {
 }
 
 img[src="icons/network-server.svg"] {
-    background: url('../icons/network-server.png');
+    background: url("../icons/network-server.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-origin: content-box;
@@ -646,7 +724,7 @@ img[src="icons/network-server.svg"] {
 }
 
 img[src="icons/paused.svg"] {
-    background: url('../icons/paused.png');
+    background: url("../icons/paused.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-origin: content-box;
@@ -656,7 +734,7 @@ img[src="icons/paused.svg"] {
 }
 
 img[src="icons/stalledDL.svg"] {
-    background: url('../icons/stalledDL.png');
+    background: url("../icons/stalledDL.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-origin: content-box;
@@ -664,7 +742,7 @@ img[src="icons/stalledDL.svg"] {
 }
 
 img[src="icons/stalledUP.svg"] {
-    background: url('../icons/stalledUP.png');
+    background: url("../icons/stalledUP.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-origin: content-box;
@@ -673,7 +751,7 @@ img[src="icons/stalledUP.svg"] {
 
 img[src="icons/seeding.svg"],
 img[src="icons/uploading.svg"] {
-    background: url('../icons/seeding.png');
+    background: url("../icons/seeding.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-origin: content-box;
@@ -682,7 +760,7 @@ img[src="icons/uploading.svg"] {
 
 img[src="icons/downloading_small.svg"],
 img[src="icons/downloading.svg"] {
-    background: url('../icons/downloading.png');
+    background: url("../icons/downloading.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-origin: content-box;
@@ -690,7 +768,7 @@ img[src="icons/downloading.svg"] {
 }
 
 img[src="icons/connected.svg"] {
-    background: url('../icons/connected.png');
+    background: url("../icons/connected.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-origin: content-box;
@@ -698,7 +776,7 @@ img[src="icons/connected.svg"] {
 }
 
 img[src="icons/disconnected.svg"] {
-    background: url('../icons/disconnected.png');
+    background: url("../icons/disconnected.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-origin: content-box;
@@ -706,7 +784,7 @@ img[src="icons/disconnected.svg"] {
 }
 
 img[src="icons/slow.svg"] {
-    background: url('../icons/slow.png');
+    background: url("../icons/slow.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-origin: content-box;
@@ -714,7 +792,7 @@ img[src="icons/slow.svg"] {
 }
 
 img[src="icons/slow_off.svg"] {
-    background: url('../icons/slow_off.png');
+    background: url("../icons/slow_off.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-origin: content-box;
@@ -722,7 +800,7 @@ img[src="icons/slow_off.svg"] {
 }
 
 img[src="icons/completed.svg"] {
-    background: url('../icons/completed.png');
+    background: url("../icons/completed.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-origin: content-box;
@@ -730,23 +808,17 @@ img[src="icons/completed.svg"] {
 }
 
 img[src="icons/mail-folder-inbox.svg"] {
-    background: url('../icons/mail-folder-inbox.png');
+    background: url("../icons/mail-folder-inbox.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-origin: content-box;
     object-position: -999999px 999999px;
 }
 
-
-
-
-
-
 /* TOOLBAR ICONS
 ----------------------------------------------------------------------------------------------*/
 
-
-#downloadButton>img.mochaToolButton {
+#downloadButton > img.mochaToolButton {
     display: none;
 }
 
@@ -759,7 +831,7 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--color-text-muted);
     margin-top: 5px;
 }
 
@@ -772,10 +844,10 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: white;
+    color: var(--color-text-on-accent);
 }
 
-#uploadButton>img.mochaToolButton {
+#uploadButton > img.mochaToolButton {
     display: none;
 }
 
@@ -788,7 +860,7 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--color-text-muted);
 }
 
 #uploadButton:hover:before {
@@ -800,10 +872,10 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: white;
+    color: var(--color-text-on-accent);
 }
 
-#deleteButton>img.mochaToolButton {
+#deleteButton > img.mochaToolButton {
     display: none;
 }
 
@@ -816,7 +888,7 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--color-text-muted);
 }
 
 #deleteButton:hover:before {
@@ -828,10 +900,10 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: white;
+    color: var(--color-text-on-accent);
 }
 
-#resumeButton>img.mochaToolButton {
+#resumeButton > img.mochaToolButton {
     display: none;
 }
 
@@ -844,7 +916,7 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--color-text-muted);
 }
 
 #resumeButton:hover:before {
@@ -856,10 +928,10 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: white;
+    color: var(--color-text-on-accent);
 }
 
-#pauseButton>img.mochaToolButton {
+#pauseButton > img.mochaToolButton {
     display: none;
 }
 
@@ -872,7 +944,7 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--color-text-muted);
 }
 
 #pauseButton:hover:before {
@@ -884,10 +956,10 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: white;
+    color: var(--color-text-on-accent);
 }
 
-#topPrioButton>img.mochaToolButton {
+#topPrioButton > img.mochaToolButton {
     display: none;
 }
 
@@ -900,7 +972,7 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--color-text-muted);
 }
 
 #topPrioButton:hover:before {
@@ -912,10 +984,10 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: white;
+    color: var(--color-text-on-accent);
 }
 
-#increasePrioButton>img.mochaToolButton {
+#increasePrioButton > img.mochaToolButton {
     display: none;
 }
 
@@ -928,7 +1000,7 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--color-text-muted);
 }
 
 #increasePrioButton:hover:before {
@@ -940,10 +1012,10 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: white;
+    color: var(--color-text-on-accent);
 }
 
-#decreasePrioButton>img.mochaToolButton {
+#decreasePrioButton > img.mochaToolButton {
     display: none;
 }
 
@@ -956,7 +1028,7 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--color-text-muted);
 }
 
 #decreasePrioButton:hover:before {
@@ -968,10 +1040,10 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: white;
+    color: var(--color-text-on-accent);
 }
 
-#bottomPrioButton>img.mochaToolButton {
+#bottomPrioButton > img.mochaToolButton {
     display: none;
 }
 
@@ -984,7 +1056,7 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--color-text-muted);
 }
 
 #bottomPrioButton:hover:before {
@@ -996,10 +1068,10 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: white;
+    color: var(--color-text-on-accent);
 }
 
-#preferencesButton>img.mochaToolButton {
+#preferencesButton > img.mochaToolButton {
     display: none;
 }
 
@@ -1012,7 +1084,7 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--color-text-muted);
 }
 
 #preferencesButton:hover:before {
@@ -1024,7 +1096,7 @@ img[src="icons/mail-folder-inbox.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: white;
+    color: var(--color-text-on-accent);
 }
 
 /* BASICS
@@ -1039,7 +1111,7 @@ h2,
 h3,
 h4,
 .mochaTitlebar h3 {
-    color: #fff;
+    color: var(--color-White);
 }
 
 /* Login */
@@ -1047,7 +1119,7 @@ h4,
     display: block;
     font-size: 2em;
     margin-block-start: 2em;
-    margin-block-end: -.9em;
+    margin-block-end: -0.9em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
@@ -1055,8 +1127,8 @@ h4,
 
 #error_msg {
     text-transform: uppercase;
-    color: #D8000C;
-    background-color: #FFD2D2;
+    color: var(--color-BadRed);
+    background-color: rgba(237, 135, 150, 0.2);
     font-family: Helvetica, Arial, sans-serif;
     left: 50%;
     top: 20%;
@@ -1113,7 +1185,6 @@ h4,
     -webkit-transform: translate(-50%, -50%);
 }
 
-
 #mochaToolbar .divider {
     background-image: none;
     padding-left: 0px;
@@ -1123,27 +1194,24 @@ h4,
     margin-bottom: 5px;
 }
 
-
 .dynamicTable th.sorted.reverse {
-    background-image: url('../icons/go-down.png') !important;
+    background-image: url("../icons/go-down.png") !important;
 }
 
 .dynamicTable th.sorted {
-    background-image: url('../icons/go-up.png') !important;
+    background-image: url("../icons/go-up.png") !important;
     background-size: 9px !important;
     background-position: right !important;
     background-repeat: no-repeat !important;
-
 }
 
 li.divider {
-    border-top: 1px solid rgba(255, 255, 255, .25) !important;
+    border-top: 1px solid var(--color-border) !important;
 }
 
-
 #main input[type="text"i] {
-    color: #FFF;
-    background-color: rgba(0, 0, 0, .25);
+    color: var(--color-White);
+    background-color: var(--color-input-bg);
     border-width: 0px;
     outline: none;
     border: none;
@@ -1154,12 +1222,12 @@ li.divider {
 }
 
 #main input[type="text"i]:focus {
-    background-color: rgba(0, 0, 0, .45);
+    background-color: var(--color-input-bg-focus);
 }
 
 #main input[type="password"i] {
-    color: #FFF;
-    background-color: rgba(0, 0, 0, .25);
+    color: var(--color-White);
+    background-color: var(--color-input-bg);
     border-width: 0px;
     outline: none;
     border: none;
@@ -1170,7 +1238,7 @@ li.divider {
 }
 
 #main input[type="password"i] {
-    background-color: rgba(0, 0, 0, .45);
+    background-color: var(--color-input-bg-focus);
 }
 
 #loginform #login {
@@ -1198,16 +1266,14 @@ li.divider {
     color: var(--button-text) !important;
 }
 
-
-
 /* Sidemenu */
 .selectedFilter {
-    background-color: rgba(0, 0, 0, 0.25);
-    color: #FFF;
+    background-color: var(--color-overlay);
+    color: var(--color-White);
 }
 
 ul.filterList li:hover {
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: var(--color-overlay);
 }
 
 .columnHandle {
@@ -1225,7 +1291,6 @@ fieldset {
 .mochaTitlebar {
     width: 100%;
     overflow: hidden;
-
 }
 
 .mochaToolButton {
@@ -1263,7 +1328,7 @@ fieldset {
 }
 
 .mocha.isFocused .mochaTitlebar h3 {
-    color: #fff;
+    color: var(--color-White);
 }
 
 .mochaContentWrapper {
@@ -1272,12 +1337,12 @@ fieldset {
 }
 
 .mochaContentBorder {
-    border-top: 0px solid #dadada;
-    border-bottom: 1px solid #dadada;
+    border-top: 0px solid var(--color-Grey);
+    border-bottom: 1px solid var(--color-Grey);
 }
 
 fieldset.settings {
-    border: solid 1px rgba(255, 255, 255, 0.25) !important;
+    border: solid 1px var(--color-border) !important;
     border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -1287,21 +1352,21 @@ fieldset.settings {
 textarea:disabled {
     color: rgb(84, 84, 84);
     cursor: default;
-    background-color: rgb(255, 255, 255, .05) !important;
+    background-color: rgb(255, 255, 255, 0.05) !important;
     border: none !important;
 }
 
 textarea {
-    color: #fff !important;
+    color: var(--color-White) !important;
     cursor: default;
-    background-color: rgb(0, 0, 0, .25) !important;
+    background-color: var(--color-input-bg) !important;
     border: none !important;
 }
 
 #watched_folders_tab td,
 #watched_folders_tab th {
     padding: 2px 4px;
-    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border: 1px solid var(--color-border) !important;
 }
 
 input[type="button"i]:hover {
@@ -1356,12 +1421,8 @@ input[type="submit"i]:hover {
     text-transform: uppercase;
 }
 
-
 /* RSS
 ----------------------------------------------------------------------------------------------*/
-
-
-
 
 #rssView {
     padding: 20px 20px 0 20px;
@@ -1417,13 +1478,13 @@ input[type="submit"i]:hover {
 }
 
 #rssTorrentDetailsName {
-    background-color: var(--color-Blue);;
+    background-color: var(--color-Blue);
     padding: 0;
-    color: white;
+    color: var(--color-text-on-accent);
 }
 
 #rssTorrentDetailsDate {
-    background-color:var(--color-Grey);
+    background-color: var(--color-Grey);
 }
 
 #rssDetailsView {
@@ -1458,7 +1519,8 @@ input[type="submit"i]:hover {
     float: left;
 }
 
-#rulesTable, #rssDownloaderArticlesTable {
+#rulesTable,
+#rssDownloaderArticlesTable {
     overflow: auto;
     width: 100%;
     height: 100%;
@@ -1514,7 +1576,9 @@ input[type="submit"i]:hover {
     margin-bottom: 10px;
 }
 
-#rulesTable table, #rssDownloaderFeedsTable table, #rssDownloaderArticlesTable table {
+#rulesTable table,
+#rssDownloaderFeedsTable table,
+#rssDownloaderArticlesTable table {
     width: 100%;
 }
 
@@ -1527,7 +1591,7 @@ input[type="submit"i]:hover {
 }
 
 #ruleSettings {
-    padding: 4px 10px 4px 10px
+    padding: 4px 10px 4px 10px;
 }
 
 #topMenuBar {
@@ -1544,28 +1608,26 @@ input[type="submit"i]:hover {
     margin: 1px 2px 1px 2px;
     border: 1px solid;
     border-radius: 2px;
-    background-color: #efefef;
-    border-color: #767676;
+    background-color: var(--color-Grey);
+    border-color: var(--color-LightGrey);
     background-position: center center;
     vertical-align: middle;
 }
-
 .imageButton:hover {
-    background-color: #e5e5e5;
-    border-color: #4f4f4f;
+    background-color: var(--color-GreySelected);
+    border-color: var(--accent-color);
 }
-
 .imageButton:active {
-    background-color: #f5f5f5;
-    border-color: #8d8d8d;
+    background-color: var(--color-Grey);
+    border-color: var(--color-LightGrey);
 }
 
 #newRuleButton {
     float: right;
-    background-image: url('../icons/document-new.svg');
+    background-image: url("../icons/document-new.svg");
 }
 
 #deleteRuleButton {
     float: right;
-    background-image: url('../icons/list-remove.svg');
+    background-image: url("../icons/list-remove.svg");
 }

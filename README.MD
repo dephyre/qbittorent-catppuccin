@@ -1,12 +1,13 @@
-# A Dark but not black qBittorrent WebUI 
-**_A darker theme for qBittorrent WebUI_ (made with the help of the Walkerservers community)**
+# Catppuccin Theme for qBittorrent WebUI
+**_A beautiful light/dark theme for qBittorrent WebUI based on Catppuccin color palette_**
 
 ![preview][preview]
 
 # Features
-- It's dark, but not black
-- It has different colors for ratio-values (see screenshot)
-- It has a mix of Fontawesome and custom icons
+- Automatic light/dark mode switching based on system preference
+- Light mode: Catppuccin Latte
+- Dark mode: Catppuccin Macchiato Lavender
+- Custom icons and Fontawesome integration
 
 # Installation
 
@@ -19,15 +20,15 @@
 2. `sudo git clone https://github.com/repslet/nightwalker.git`
 3. `sudo chmod -R 777 nightwalker`
 
-### Activate Alterative WebUI in qBittorrent
+### Activate Alternative WebUI in qBittorrent
 1. Under `Tools->Preferences->WebUI` enable `Use alternative WebUI`.
-2. Choose a location that points to the `Nightwalker` folder, i.e. `/opt/nightwalker`
+2. Choose a location that points to the `nightwalker` folder.
 3. Restart qBittorrent or refresh your browser for changes to take effect.
 
 You can also change these settings via the config file. The relevant entries are:
 
 - WebUI\AlternativeUIEnabled=true
-- WebUI\RootFolder=/path/to/Nightwalker
+- WebUI\RootFolder=/path/to/nightwalker
 
 ### Update theme (Linux)
 1. `cd /opt/nightwalker`
@@ -35,16 +36,10 @@ You can also change these settings via the config file. The relevant entries are
 3. `git fetch origin main`
 4. `git reset --hard origin/main`
 
-### Tested
-Based on the standard qBittorrent WebUI theme (4.3.2 release).
-Tested in 4.3.1 and 4.3.2
-
-#### A note for those who used the [Theme Park][theme.park] nginx mod
-Modify your nginx config and remove the lines that introduced the external css, anything after `rewrite ^/qbittorrent/(.*) /$1 break; ` (non inclusive) is something that can be removed. Do not leave -modded, or any other files that are not necessary for nginx to function in the `/etc/nginx/apps/` directory. Reload nginx after making changes by doing `sudo service nginx configtest`, if it returns OK, then proceed and do `sudo service nginx reload`. 
-
 # Credits
-* The Walkerservers (Discord) community
-* glibN for the inspiration to use the Fontawesome pack
+* Original Nightwalker theme by the Walkerservers community
+* Catppuccin color palette by the Catppuccin team
+* Modified by dephyre
 * Fontawesome for their great fonts
 * qBittorrent for the base files
 
