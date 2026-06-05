@@ -1,7 +1,7 @@
 # Catppuccin Theme for qBittorrent WebUI
 **_A beautiful light/dark theme for qBittorrent WebUI based on Catppuccin color palette_**
 
-![preview][preview]
+![preview](preview-dark.png)[preview]
 
 # Features
 - Automatic light/dark mode switching based on system preference
