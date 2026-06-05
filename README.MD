@@ -17,21 +17,21 @@
 
 ### Clone this repo (Linux)
 1. `cd /opt`
-2. `sudo git clone https://github.com/repslet/nightwalker.git`
-3. `sudo chmod -R 777 nightwalker`
+2. `sudo git clone https://github.com/dephyre/qbittorent-catppuccin.git`
+3. `sudo chmod -R 777 catppuccin`
 
 ### Activate Alternative WebUI in qBittorrent
 1. Under `Tools->Preferences->WebUI` enable `Use alternative WebUI`.
-2. Choose a location that points to the `nightwalker` folder.
+2. Choose a location that points to the `catppuccin` folder.
 3. Restart qBittorrent or refresh your browser for changes to take effect.
 
 You can also change these settings via the config file. The relevant entries are:
 
 - WebUI\AlternativeUIEnabled=true
-- WebUI\RootFolder=/path/to/nightwalker
+- WebUI\RootFolder=/path/to/catppuccin
 
 ### Update theme (Linux)
-1. `cd /opt/nightwalker`
+1. `cd /opt/catppuccin`
 2. `git checkout main`
 3. `git fetch origin main`
 4. `git reset --hard origin/main`
