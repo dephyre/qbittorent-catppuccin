@@ -42,6 +42,7 @@ You can also change these settings via the config file. The relevant entries are
 * Modified by dephyre
 * Fontawesome for their great fonts
 * qBittorrent for the base files
+* Cloned from https://github.com/repslet/nightwalker.git
 
 [preview]: preview.png
 [qbittorrentsource]: https://github.com/qbittorrent/qBittorrent/tree/master/src/webui/www1\
